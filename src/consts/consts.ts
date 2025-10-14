@@ -23,3 +23,18 @@ export const GOODS = [
   'Towels',
   'Fridge',
 ] as const;
+
+export const enum CONST_OFFER_DATA {
+  MIN_RATING = 1,
+  MAX_RATING = 5,
+  MIN_ROOMSCOUNT = 1,
+  MAX_ROOMSCOUNT = 8,
+  MIN_PEOPLECOUNT = 1,
+  MAX_PEOPLECOUNT = 10,
+  MIN_PRICE = 1,
+  MAX_PRICE = 1000000,
+  MIN_COMMENTS = 0,
+  MAX_COMMENTS = 999,
+  FIRST_WEEK_DAY = 1,
+  LAST_WEEK_DAY = 7
+};
