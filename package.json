@@ -44,6 +44,7 @@
     "got": "^12.6.1",
     "inversify": "^7.10.3",
     "json-server": "^1.0.0-beta.3",
+    "mongoose": "^8.19.3",
     "pino": "^10.1.0"
   }
 }
