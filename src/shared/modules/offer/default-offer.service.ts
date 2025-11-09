@@ -53,7 +53,7 @@ export class DefaultOfferService implements OfferService {
       }})
       .exec();
   }
-  
+
   public async findPremiumOffersInCity(city: CityType): Promise<types.DocumentType<OfferEntity>[]> {
     return this.offerModel
       .find({city, isPremium: true})
@@ -70,20 +70,20 @@ export class DefaultOfferService implements OfferService {
 
   public async addFavorite(userId: string, offerId: string): Promise<types.DocumentType<OfferEntity> | null> {
     return this.offerModel.findByIdAndUpdate(
-        offerId,
-        { $push: { favouritedBy: userId } },
-        { new: true }
-      )
+      offerId,
+      { $push: { favouritedBy: userId } },
+      { new: true }
+    )
       .populate(['host'])
       .exec();
   }
-  
+
   public async removeFavorite(userId: string, offerId: string): Promise<void> {
     await this.offerModel.findByIdAndUpdate(
-        offerId,
-        { $pop: { favouritedBy: userId } },
-        { new: true }
-      )
+      offerId,
+      { $pop: { favouritedBy: userId } },
+      { new: true }
+    )
       .populate(['host'])
       .exec();
   }
